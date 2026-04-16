@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Light theme ─── */
+:root {
+  --color-page: #FDF5E6; /* Beige */
+  --color-card: #FFFAF0; /* Warm white */
+  --color-card-hover: #FFF5E1; /* Warm hover */
+  --color-elevated: #EEDCB5;
+  --color-elevated-hover: #DFCCA0;
+  --color-heading: #4A2B12; /* Dark Brown */
+  --color-body: #6E452B; /* Lighter Brown */
+  --color-secondary: #8F6A52;
+  --color-muted: #AF8E75;
+  --color-faint: #E4CDB4;
+  --color-border: #EBDCC5;
+  --color-inset: #FFF8ED;
+  --color-banner: rgba(253, 245, 230, 0.95);
+}
+
+/* ─── Dark theme ─── */
+.dark {
+  --color-page: #2A1713; /* Dark earthy maroon/brown */
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-card-hover: rgba(255, 255, 255, 0.08);
+  --color-elevated: rgba(255, 255, 255, 0.12);
+  --color-elevated-hover: rgba(255, 255, 255, 0.2);
+  --color-heading: #ffffff;
+  --color-body: #EFE8E1; /* Warm light grey/beige */
+  --color-secondary: #C1B5AE;
+  --color-muted: #92847B;
+  --color-faint: #635750;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-inset: rgba(255, 255, 255, 0.03);
+  --color-banner: rgba(42, 23, 19, 0.95);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-page);
+}
+
+/* ─── Marquee scroll for long song titles ─── */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-scroll {
+  animation: marquee-scroll 12s linear infinite;
+}
+
+/* ─── Fade-in animation for song transitions ─── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
